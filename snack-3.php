@@ -63,7 +63,7 @@ var_dump($posts)
         <?php for($i = 0; $i < count($posts); $i++) : ?>
             <li>
             <strong>
-            <?php echo $posts[$i][] ?> :
+            <?php echo $posts[$i] ?> :
             </strong>
         
             <!-- <?php echo $posts[$i]['title'] ?> ; <br>
