@@ -10,15 +10,6 @@ ITALIA
 Lega A
 2022/2023
 
-
-Basket Napoli - Virtus Bologna
-Olimpia Milano-Brescia
-Tortona-Trento
-Treviso-Reggiana
-Trieste-Pesaro
-Varese-Sassari
-Venezia-Scafati
-Verona-Brindisi 
 -->
 <?php
 $basket_calendar = [
@@ -66,3 +57,22 @@ $basket_calendar = [
     
 ]
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lega A ITA</title>
+</head>
+<body>
+    <h1> RISULTATI PRIMA GIORNATA LEGA A</h1>
+
+    <ol>
+        <?php for($i = 0; $i <= count($basket_calendar)-1; $i++) : ?>
+            <li> <?php echo $basket_calendar[$i]['home'] ?> vs <?php echo $basket_calendar[$i]['away'] ?> | <?php echo $basket_calendar[$i]['score'] ?> </li>
+        <?php endfor?>
+    </ol>
+</body>
+</html>
