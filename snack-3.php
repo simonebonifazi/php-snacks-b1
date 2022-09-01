@@ -46,14 +46,9 @@ $posts_by_date = [
 ];
 
 // var_dump($posts_by_date);
-
- for($i = 0; $i < count($dates); $i++) {
-
+     //prendo le keys
      $dates = array_keys($posts_by_date);
-     
-     $date = $dates[$i];
-
-    };
+   
      ?>
 
 <!DOCTYPE html>
@@ -75,6 +70,7 @@ $posts_by_date = [
         ?>
             <li>
             <strong>
+                post del giorno
             <?php echo $date ?> :
             </strong>
             <ul>
