@@ -6,7 +6,22 @@
     altrimenti “Accesso negato”; -->
 
 <?php
-$name = $_GET['name'];
-$mail = $_GET['mail'];
-$age = $_GET['age'];
+$name = $_GET['name'] ?? '';
+$email = $_GET['email'] ?? '';
+$age = $_GET['age'] ?? '';
+
+//validation name
+$is_name_true = mb_strlen($name) > 3;
+//validation email
+$is_email_good = strpos($email, '0') && strpos($email, '.');
+//validation age
+$is_age_number = is_numeric($age);
+
+//print on page
+if(!$is_name_true || $is_email_good || $is_age_number){
+echo 'Accesso riuscito';
+} else {
+    echo 'Accesso negato';
+};
+
 ?>
