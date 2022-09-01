@@ -11,7 +11,9 @@ Lega A
 2022/2023
 
 -->
+
 <?php
+//array
 $basket_calendar = [
     [
         "home" => "Basket Napoli",
@@ -70,6 +72,7 @@ $basket_calendar = [
     <h1> RISULTATI PRIMA GIORNATA LEGA A</h1>
 
     <ol>
+        <!-- ordering & printing -->
         <?php for($i = 0; $i <= count($basket_calendar)-1; $i++) : ?>
             <li> <?php echo $basket_calendar[$i]['home'] ?> vs <?php echo $basket_calendar[$i]['away'] ?> | <?php echo $basket_calendar[$i]['score'] ?> </li>
         <?php endfor?>
