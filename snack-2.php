@@ -18,10 +18,10 @@ $is_email_good = strpos($email, '0') && strpos($email, '.');
 $is_age_number = is_numeric($age);
 
 //print on page
-if(!$is_name_true || $is_email_good || $is_age_number){
-echo 'Accesso riuscito';
-} else {
+if(!$is_name_true || !$is_email_good || !$is_age_number){
     echo 'Accesso negato';
+} else {
+    echo 'Accesso riuscito';
 };
 
 ?>

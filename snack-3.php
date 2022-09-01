@@ -5,7 +5,7 @@ e come valore un array di post associati a quella data.
 
  <?php
 
-$posts = [
+$posts_by_date = [
 
     '10/01/2022' => [
         [
@@ -45,8 +45,16 @@ $posts = [
     ],
 ];
 
-var_dump($posts)
-?>
+// var_dump($posts_by_date);
+
+ for($i = 0; $i < count($dates); $i++) {
+
+     $dates = array_keys($posts_by_date);
+     
+     $date = $dates[$i];
+
+    };
+     ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,17 +68,28 @@ var_dump($posts)
     <h1>POSTS</h1>
 
     <ul>
-        <?php for($i = 0; $i < count($posts); $i++) : ?>
+        <?php for($i = 0; $i < count($dates); $i++) { 
+
+            $date = $dates[$i]; //data chiave del singolo giro
+            $posts = $posts_by_date[$date]
+        ?>
             <li>
             <strong>
-            <?php echo $posts[$i] ?> :
+            <?php echo $date ?> :
             </strong>
+            <ul>
+                <?php for($j = 0; $j < count($posts); $j++) :
+                ?>
+                <li>
+                    <p> <?= $posts[$j]['title'] ?></p>
+                    <p> <?= $posts[$j]['author'] ?></p>
+                    <p> <?= $posts[$j]['text'] ?></p>
+                </li>
+                <?php endfor ?>
+            </ul>
         
-            <!-- <?php echo $posts[$i]['title'] ?> ; <br>
-            <?php echo $posts[$i]['author'] ?> ; <br>
-            <?php echo $posts[$i]['text'] ?> ; <br> -->
-            </li>
-        <?php endfor?>
+           
+        <?php }?>
     </ul>
 </body>
 </html>
